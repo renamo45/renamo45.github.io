@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>TH05 Online Test</title>
-    <script src="js-dos.js"></script>
-</head>
-<body>
-    <div id="dosbox-container"></div>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>thing</title>
+        <script src="js-dos.js"></script>
+    </head>
+    <body>
+        <div id="dosbox-container" style="width: 800px; height: 600px;"></div>
 
-    <script>
-        // Initialize js-dos
-        Dosbox.init("dosbox-container").then(function (emulator) {
-            // Load your ZIP archive
-            emulator.run("path/to/your/dos_environment.zip").then(function (ci) {
-                // You can send commands to the running DOSBox instance here if needed
-                // For example: ci.send("dir");
+        <script>
+            Dos(document.getElementById("dosbox-container")).run({
+                url: "my_dos_program.zip", // Path to your ZIP file
+                // Optional: Specify a command to run after loading
+                // main: "COMMAND.COM /C MYPROG.EXE" 
             });
-        });
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>
